@@ -31,6 +31,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0EB9577A20317B2F00C9D854 /* SampleLocation.gpx */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = SampleLocation.gpx; sourceTree = "<group>"; };
 		0EE4EAC120302CA600AFD1B5 /* TestGooglePlaces.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TestGooglePlaces.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0EE4EAC420302CA600AFD1B5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0EE4EAC620302CA600AFD1B5 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -139,6 +140,7 @@
 			isa = PBXGroup;
 			children = (
 				0EE4EAE22030328400AFD1B5 /* GooglePlaces.bundle */,
+				0EB9577A20317B2F00C9D854 /* SampleLocation.gpx */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
