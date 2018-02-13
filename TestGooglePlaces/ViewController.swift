@@ -86,6 +86,60 @@ class ViewController: UIViewController {
             }
         }
     }
+
+    @IBAction func onClickGecode(_ sender: Any) {
+//        requestGeocoding()
+        requestReverseGeocoding()
+    }
+
+    let googleGeocodingAPIKey = ""
+    let googleGeocodingBaseURL = "https://maps.googleapis.com/maps/api/geocode/json"
+
+    func requestGeocoding() {
+        print(#function)
+        var components = URLComponents(string: googleGeocodingBaseURL)!
+        components.queryItems = [
+            URLQueryItem(name: "key", value: googleGeocodingAPIKey),
+            URLQueryItem(name: "address", value: "Tokyo"),
+        ]
+        requestGoogleGeocoding(url: components.url!)
+    }
+    func requestReverseGeocoding() {
+        print(#function)
+        guard let coordinate = coordinate else {
+            return
+        }
+//        let latlng = "\(coordinate.latitude),\(coordinate.longitude)"
+        let latlng = "35.6836488,139.6829098"
+        var components = URLComponents(string: googleGeocodingBaseURL)!
+        components.queryItems = [
+            URLQueryItem(name: "key", value: googleGeocodingAPIKey),
+            URLQueryItem(name: "latlng", value: latlng),
+            URLQueryItem(name: "result_type", value: "locality|sublocality"),
+        ]
+        requestGoogleGeocoding(url: components.url!)
+    }
+    func requestGoogleGeocoding(url: URL) {
+        print(#function)
+        print("url >>>", url)
+        let task = URLSession.shared.dataTask(with: url) { (data, urlSession, error) in
+            if let error = error {
+                print("error >>>", error)
+                return
+            }
+            guard let data = data, data.count > 0 else {
+                print("data is empty")
+                return
+            }
+            let json = try! JSONSerialization.jsonObject(with: data, options: .allowFragments)
+            print("json >>>\n", json)
+            guard let dict = json as? [String: Any], let results = dict["results"] as? [[String: Any]] else { return }
+            for result in results {
+                print("result >>>", result)
+            }
+        }
+        task.resume()
+    }
 }
 
 extension ViewController: GMSAutocompleteViewControllerDelegate {
@@ -137,7 +191,7 @@ extension ViewController: CLLocationManagerDelegate {
         }
         print("location >>>", location)
         coordinate = location.coordinate
-        requestCurrentPlace()
+//        requestCurrentPlace()
     }
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
         print(#function)

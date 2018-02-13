@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -44,15 +44,24 @@
                                     <action selector="getCurrentPlace:" destination="BYZ-38-t0r" eventType="touchUpInside" id="zS1-4T-8ln"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8nz-vT-Dvr">
+                                <rect key="frame" x="164.5" y="282" width="46" height="30"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="onClickGecode:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ZCs-Pw-XqJ"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="A85-yn-zNx" firstAttribute="top" secondItem="GEa-3G-cCs" secondAttribute="bottom" constant="20" id="7ev-lB-GdZ"/>
                             <constraint firstItem="GEa-3G-cCs" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="AOz-ve-Sxa"/>
                             <constraint firstItem="gxl-lQ-1zj" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="BwS-Qw-RKD"/>
+                            <constraint firstItem="8nz-vT-Dvr" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="CEh-gS-1u1"/>
                             <constraint firstItem="A85-yn-zNx" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="JEN-7C-ea9"/>
                             <constraint firstItem="sWY-pP-3ez" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="NbE-Ro-Bbs"/>
                             <constraint firstItem="sWY-pP-3ez" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="mzu-ge-z5z"/>
+                            <constraint firstItem="8nz-vT-Dvr" firstAttribute="top" secondItem="gxl-lQ-1zj" secondAttribute="bottom" constant="50" id="qg2-Cb-szW"/>
                             <constraint firstItem="gxl-lQ-1zj" firstAttribute="top" secondItem="A85-yn-zNx" secondAttribute="bottom" constant="20" id="t4g-BI-9IM"/>
                             <constraint firstItem="GEa-3G-cCs" firstAttribute="top" secondItem="sWY-pP-3ez" secondAttribute="bottom" constant="50" id="xki-9r-kMR"/>
                         </constraints>
