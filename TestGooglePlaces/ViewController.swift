@@ -43,6 +43,11 @@ class ViewController: UIViewController {
     }
 
     @IBAction func getCurrentPlace(_ sender: Any) {
+//        requestGoogleCurrentPlace()
+        requestCurrentPlace()
+    }
+
+    func requestGoogleCurrentPlace() {
         placesClient.currentPlace { (placeLikelihoodList, error) in
             if let error = error {
                 print("Pick Place error: \(error.localizedDescription)")
@@ -191,7 +196,6 @@ extension ViewController: CLLocationManagerDelegate {
         }
         print("location >>>", location)
         coordinate = location.coordinate
-//        requestCurrentPlace()
     }
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
         print(#function)
